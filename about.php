@@ -9,7 +9,7 @@ $sql='SELECT title,ingredients,email,id FROM pizzas';
 $result=mysqli_query($conn,$sql);
 
 //fetch the result rows an array
-$pizzas=mysqli_fetch_all($result,MYSQLI_ASSOC);
+$pizzas=mysqli_fetch_all($result,MYSQLI_ASSOC);//MYSQLI_ASSOC returns associative array
 
 //free result from memory
 mysqli_free_result($result);
@@ -33,7 +33,7 @@ mysqli_close($conn);
                 <div class="card z-depth-0">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($pizza['title'])?></h6>
-                        <div><?php echo htmlspecialchars($pizza['ingredients']) ?>
+                        <div><?php echo htmlspecialchars($pizza['email'])?>
                         <ul>
                             <?php 
                             $ingredients=explode(',',$pizza['ingredients']);
