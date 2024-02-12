@@ -25,7 +25,7 @@ mysqli_close($conn);
 <html>
     <?php 
     include('templates/header.php');?>
-    <h4 class="center grey-text">Pizzas</h4>
+    <h4 class="center grey-text">Fruit Baskets</h4>
     <div class="container">
      <div class="row">
         <?php foreach($pizzas as $pizza): ?>

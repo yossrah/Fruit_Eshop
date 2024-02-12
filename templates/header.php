@@ -26,9 +26,9 @@
 <body class="grey lighten-4">
  <nav class="white z-depth-0">
    <div class="container">
-   <a href="about.php" class="brand-logo brand-text">Ninja pizzas</a>
+   <a href="about.php" class="brand-logo brand-text">Fruit Baskets</a>
    <ul id="nav-mobile" class="right hide-on-small-and-down">
-    <li><a href="form.php" class="btn brand z-depth-0">Add a pizza</a></li>
+    <li><a href="form.php" class="btn brand z-depth-0">Add a basket</a></li>
    </ul>
    </div>
  </nav>
