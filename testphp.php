@@ -126,4 +126,58 @@ printName();
 echo $name//Yoshi*/
 //include('index.php');
 //require('index.php') ;//when error it blocks the code
+
+//ternary operators
+/*$temp=37;
+$val= $temp>50 ?'Normal tempretaure':'Higher drink water';
+echo $val;*/
+
+//superglobals are special arrays variables in php
+// $_POST and $_GET are superglobals
+/*echo $_SERVER['SERVER_NAME'].'<br/>';
+echo $_SERVER['REQUEST_METHOD'].'<br/>';
+echo $_SERVER['SCRIPT_FILENAME'].'<br/>';
+echo $_SERVER['PHP_SELF'].'<br/>';*/
+
+//class
+class Person{
+    private $name;
+    protected $email;
+    function __construct($name,$email){
+        $this->name =$name;
+        $this->email=$email;
+    }
+    public function getName(){
+        return $this->name;
+    }
+    public function setName($name){
+        if(is_string($name)&& strlen($name)>1){
+            $this->name=$name;
+            echo "successfully set name to ". $name;
+        }
+       
+    }
+
+}
+$userOne=new Person('Yoshi',"Yoshi@email.com");
+$userOne->setName('Moshi');
+$userOne->getName();
+//inheritence
+class Student extends Person{
+    private $level;
+    function __construct($name,$email,$level){
+        $this->level=$level;
+        parent::__construct($name,$email);
+
+    }
+    public function getLevel(){
+        return $this->level;
+    }
+    //you can not acces email in the parent class because it is private , so you need to make it protected
+    public static function getEmail(){
+        return $this->email;
+    }
+}
+$StudentOne=new Student("Maria","maria@gmail.com","Major");
+echo Student::getEmail();
 ?>

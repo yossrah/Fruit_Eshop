@@ -1,4 +1,5 @@
 <?php 
+//cookies are stored in the user's browser
 include('config/db_connect.php');
 $email=$title=$ingredients='';
 $errors=array('email'=>'','title'=>'','ingredients'=>'');
@@ -7,6 +8,9 @@ $errors=array('email'=>'','title'=>'','ingredients'=>'');
 the form has been submitted, as it checks whether the "submit" button was present in the form data.
  If the form is submitted, the code inside the conditional block is executed to process the form data.*/
 if(isset($_POST['submit'])){
+    //set a cookie based on the title selected and expired through a day
+    //setcookie('title',$_POST['title'],time()+86400);
+
     //echo htmlspecialchars($_POST['ingredients']);
     //check validation
     if(empty($_POST['email'])){
@@ -68,7 +72,7 @@ if(isset($_POST['submit'])){
     
     <section class="container grey-text">
         <h4 class="center">Add Pizzas</h4>
-        <form class="white" action="form.php" method="POST">
+        <form class="white" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
             <label>Your email :</label>
             <input type="text" name="email" value="<?php echo $email; ?>">
             <div class="red-text"><?php echo $errors["email"]; ?></div>

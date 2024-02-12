@@ -1,3 +1,9 @@
+<?php
+
+//get cookie
+ $title=$_COOKIE['title']??'Unknown';
+?>
+
 <head>
    <title>Fruity E_Shop</title>
    <!-- Compiled and minified CSS -->
